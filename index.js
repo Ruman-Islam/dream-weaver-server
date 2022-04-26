@@ -117,6 +117,7 @@ async function run() {
         })
 
         // http://localhost:5000/orders
+        // https://secret-basin-49124.herokuapp.com/
         app.get('/orders', verifyToken, async (req, res) => {
             const decodedEmail = req.decoded.email;
             const email = req.query.email;
@@ -137,10 +138,6 @@ run().catch(console.dir);
 
 app.get('/', (req, res) => {
     res.send('Dream Weaver is running')
-})
-
-app.get('/hero', (req, res) => {
-    res.send('hero is running')
 })
 
 app.listen(port, () => {
