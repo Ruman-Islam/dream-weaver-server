@@ -139,6 +139,10 @@ app.get('/', (req, res) => {
     res.send('Dream Weaver is running')
 })
 
+app.get('/hero', (req, res) => {
+    res.send('hero is running')
+})
+
 app.listen(port, () => {
     console.log('Dream Weaver server is running on port -', port);
 })
