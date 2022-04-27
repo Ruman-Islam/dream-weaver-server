@@ -137,7 +137,7 @@ async function run() {
 run().catch(console.dir);
 
 app.get('/', (req, res) => {
-    res.send('Dream Weaver is running')
+    res.send('Dream Weaver is running.')
 })
 
 app.listen(port, () => {
