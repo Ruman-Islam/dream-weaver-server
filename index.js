@@ -59,11 +59,11 @@ async function run() {
         //     res.send(packages);
         // })
         app.get('/packages', async (req, res) => {
-            const page = parseInt(req.query.page);
-            const size = parseInt(req.query.size);
+            const limit = parseInt(req.query.limit);
+            const pageNumber = parseInt(req.query.pageNumber);
             const cursor = packagesCollection.find({});
             const count = await packagesCollection.estimatedDocumentCount();
-            const packages = await cursor.skip(page * size).limit(size).toArray();
+            const packages = await cursor.skip(pageNumber * limit).limit(limit).toArray();
             if (!packages.length) {
                 res.send({ success: false, error: 'Product not found' });
             }
