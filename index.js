@@ -81,7 +81,7 @@ async function run() {
             const id = req.params.id;
             const query = { _id: ObjectId(id) };
             const package = await packagesCollection.findOne(query);
-            res.send(package)
+            res.send(package);
         })
 
         // http://localhost:5000/package/id
